@@ -2,6 +2,15 @@
 import {type Recipe} from"../../types/types1"
 const { id } = useRoute().params;
 const {data ,error} = await useFetch <Recipe> (`https://dummyjson.com/recipes/${id}`);
+//Error massage show other Routing page to Url
+
+if (error.value) {
+  throw createError({
+    statusCode: error.value?.statusCode,
+    statusMessage: error.value?.statusMessage,
+  });
+}
+
 
 </script>
 
