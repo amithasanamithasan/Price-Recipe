@@ -21,7 +21,7 @@
       <NuxtLink to="/contact"> Contact </NuxtLink>
         </li>
         <li>
-       <NuxtLink to="/services" >Services</NuxtLink>
+       <NuxtLink to="/menu" >Menu</NuxtLink>
         </li>
         <li>
        <NuxtLink to="/login" >Login</NuxtLink>
