@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <header class="py-4 border-b  bg-slate-700 opacity-60 z-10  ">
+        <header class="py-4 border-b  bg-slate-700 opacity-60 z-10 overflow-auto ">
     <nav class="flex container items-center">
       <NuxtLink to="/" class="flex gap-1 items-center">
         <img class="w-14 " src="/icon-green.png" alt="" />
