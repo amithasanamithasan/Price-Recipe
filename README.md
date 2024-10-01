@@ -2,7 +2,7 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Project Deploy(https://thriving-toffee-9aafbe.netlify.app/)
+## Project Deploy[https://thriving-toffee-9aafbe.netlify.app/]
 
 ## Setup
 
