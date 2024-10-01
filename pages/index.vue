@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const {data,error}= await useFetch("https://dummyjson.com/recipes?limit=12")
+import { type RecipeResponse } from '~/types/types';
+const {data , error}= await useFetch<RecipeResponse>("https://dummyjson.com/recipes",{
+    method: 'GET',
+})
 </script>
 
 <template>
@@ -13,9 +16,7 @@ const {data,error}= await useFetch("https://dummyjson.com/recipes?limit=12")
           <p class="text-xl lg:text-2xl mb-8 text-balance">
             Discover recipes helping you to find the easiest way to cook.
           </p>
-          <button
-            class="px-4 py-2 text-white self-start bg-dodgeroll-gold rounded-md text-lg cursor-pointer"
-          >
+          <button class="px-4 py-2 text-white self-start bg-black rounded-md text-lg cursor-pointer">
             Browse Recipes
           </button>
         </div>
@@ -34,10 +35,10 @@ const {data,error}= await useFetch("https://dummyjson.com/recipes?limit=12")
     <section class="py-20 container">
       <h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
       <p class="text-lg lg:text-xl mb-8">Check out our most popular recipes!</p>
-      <div v-if="!error" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
-        <div  class="flex flex-col shadow rounded-md">
+      <div  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
+        <div v-for="recipe in data?.recipes"  class="flex flex-col shadow rounded-md">
           <NuxtImg
-         
+         :src="recipe.image"
             sizes="xs:100vw sm:50vw lg:400px"
             format="webp"
             densities="x1"
@@ -64,7 +65,7 @@ const {data,error}= await useFetch("https://dummyjson.com/recipes?limit=12")
           </div>
         </div>
       </div>
-      <p v-else class="text-xl">Opps, something went wrong. Please try again later</p>
+
     </section>
       </main>
 </template>
