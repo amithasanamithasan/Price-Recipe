@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import Footersection from '~/components/Footersection.vue';
 import Recipecard from '~/components/Recipecard.vue';
 import { type RecipeResponse } from '~/types/types';
 const {data , error}= await useFetch<RecipeResponse>("https://dummyjson.com/recipes")
@@ -55,6 +56,7 @@ useSeoMeta({
       <p v-else class="text-xl"> Opss ,Something went wrong .Please tru again leter</p>
     </section>
       </main>
+      <Footersection></Footersection>
 </template>
 
 
